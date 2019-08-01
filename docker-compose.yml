@@ -1,0 +1,31 @@
+version: '3'
+
+volumes:
+  db-data:
+
+services:
+  db:
+    image: postgres:10.9-alpine
+    volumes:
+      - db-data:/var/lib/postgresql/data/
+      - ./scripts:/scripts
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init-user-db.sh
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+
+  api:
+    image: amazoncorretto:8
+    volumes:
+      - ./api:/api
+    ports:
+      - 3000:3000
+    command: bash -c "ls"
+
+  app:
+    image: node:lts-alpine
+    volumes:
+      - ./app:/app
+    ports:
+      - 5000:5000
