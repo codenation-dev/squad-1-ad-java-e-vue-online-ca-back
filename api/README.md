@@ -18,6 +18,7 @@ http://localhost:8080/api/
 Recursos já implementados:
 
 http://localhost:8080/api/webapi/errors
+http://localhost:8080/api/webapi/users/reset-password
 
 
 
