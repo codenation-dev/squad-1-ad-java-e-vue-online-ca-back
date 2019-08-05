@@ -12,15 +12,14 @@ import javax.ws.rs.core.MediaType;
 public class ErroRecurso {
 
     /**
-     * Este método retorna a lista de erros.
+     * This method returns the list of errors.
      *
-     * @return por enquanto TEXT_PLAIN, alterar para Json no futuro.
+     * @return Json
      */
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getIt() {
-    	
-    	//Aqui ainda falta alterar o MediaType para json.
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getErrors() {
+ 
     	//Ver com pessoal do Front se eles preferem json ou xml.
     	
         return "Lista de erros: .......";
