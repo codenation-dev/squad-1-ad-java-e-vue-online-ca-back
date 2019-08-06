@@ -30,7 +30,6 @@ export default {
     computed: {
       style() {
         const { height, width } = this;
-        console.log({ height, width });
         return `height: ${height}; width: ${width};`;
       }
     },

@@ -1,27 +1,48 @@
 <template>
   <div class="home">
     <h1 class="home-title">Login</h1>
-    <section class="home-section">
-      <Input type="text" v-model="email" :value="email" placeholder="e-mail" />
+    <form @submit.prevent="handleSubmit" class="home-section">
+      <Input type="email" v-model="email" :value="email" placeholder="e-mail" />
       <Input type="password" v-model="password" :value="password" placeholder="password" />
-    </section>
+      <Button type="submit">Logar</Button>
+    </form>
   </div>
 </template>
 
 <script>
 import Input from "@/components/Input.vue";
+import Button from '@/components/Button.vue';
+import { required, email } from "vuelidate/lib/validators";
 
 export default {
   name: "home",
   components: {
-    Input
+    Input,
+    Button
   },
   data() {
     return {
       email: "",
-      password: ""
+      password: "",
+      submitted: false
     };
-  }
+  },
+  validations: {
+    form: {
+      password: { required },
+      email: { required, email }
+    }
+  },
+  methods: {
+    handleSubmit: () => {
+      this.submitted = true;
+      this.$v.$touch();
+      if (this.$v.$invalid) {
+        return;
+      }
+      console.log('logando')
+    }
+  },
 };
 </script>
 
