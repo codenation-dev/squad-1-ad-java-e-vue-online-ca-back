@@ -1,57 +1,32 @@
 <template>
-  <div class="container">
-    <h1 class="container-title">Cadastro</h1>
-    <form class="container-form">
-      <Input placeholder="E-mail" type="email"/>
-      <Input placeholder="Senha" type="password"/>
-      <Button @click="createUser">Enviar</Button>
-    </form>
-  </div>
+  <v-container text-center>
+    <h1 class="register__title text-center">Cadastro</h1>
+    <v-form @submit.prevent="createUser">
+      <v-flex xs12 offset-md4 md4>
+        <v-text-field label="E-mail" outlined />
+        <v-text-field label="Senha" outlined type="password" />
+        <v-btn block type="submit">Cadastrar</v-btn>
+      </v-flex>
+    </v-form>
+  </v-container>
 </template>
 
 <script>
-import Input from "@/components/Input.vue";
-import Button from "@/components/Button.vue";
-
 export default {
   name: 'register',
-  components: {
-    Input,
-    Button
-  },
   data: () => ({
-
+    //
   }),
   methods: {
     createUser() {
       alert('Chama a rota para criar registrar o usuário');
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &-title {
-      margin: 15rem 1rem 1rem;
-    }
-
-    &-form {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-
-      @media screen and (min-width: 480px) {
-        width: 350px;
-      }
-
-      & > input {
-        margin-bottom: 1rem;
-      }
-    }
-  }
+.register__title {
+  margin: 5rem 0 2rem;
+}
 </style>

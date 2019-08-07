@@ -1,11 +1,28 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/"></router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app>
+    <v-app-bar app color="#2687e9" >
+      <v-toolbar-title class="headline text-uppercase app-title">
+        <span>Central de Erros</span>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-app-bar>
+    <v-content>
+      <router-view />
+    </v-content>
+    <v-footer>
+      <v-container align-center>
+        <v-text>Desenvolvido por Squad-1</v-text>
+      </v-container>
+    </v-footer>
+  </v-app>
 </template>
+
+<style lang="scss" scoped>
+.app-title {
+  color: #fff;
+}
+</style>
+
 
 <style>
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -59,20 +76,15 @@ table {
 	border-spacing: 0;
 }
 
-#app {
-  height: 100vh;
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-}
-
 h1 {
-  font-size: 28px;
+  font-size: 32px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 28px;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 24px;
 }
 </style>
