@@ -1,7 +1,7 @@
 <template>
   <v-container text-center>
     <h1 class="register__title text-center">Cadastro</h1>
-    <v-form @submit.prevent="createUser">
+    <v-form @submit.prevent="handleSubmit">
       <v-flex xs12 offset-md4 md4>
         <v-text-field label="E-mail" outlined />
         <v-text-field label="Senha" outlined type="password" />
@@ -18,7 +18,7 @@ export default {
     //
   }),
   methods: {
-    createUser() {
+    handleSubmit() {
       alert('Chama a rota para criar registrar o usuário');
     }
   }
