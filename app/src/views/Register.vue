@@ -3,9 +3,9 @@
     <h1 class="register__title text-center">Cadastro</h1>
     <v-form @submit.prevent="handleSubmit">
       <v-flex xs12 offset-md4 md4>
-        <v-text-field label="E-mail" outlined />
-        <v-text-field label="Senha" outlined type="password" />
-        <v-btn block type="submit">Cadastrar</v-btn>
+        <v-text-field required label="E-mail" outlined />
+        <v-text-field required label="Senha" outlined type="password" />
+        <v-btn color="success" block type="submit">Cadastrar</v-btn>
       </v-flex>
     </v-form>
   </v-container>

@@ -1,45 +1,33 @@
 <template>
   <div class="home">
     <h1 class="home-title">Login</h1>
-    <form @submit.prevent="handleSubmit" class="home-section">
-      <Input type="email" v-model="email" :value="email" placeholder="e-mail" />
-      <Input type="password" v-model="password" :value="password" placeholder="password" />
-      <!-- <Button type="submit">Logar</Button> -->
-    </form>
+    <v-form @submit.prevent="handleSubmit" v-model="valid" class="home-section">
+      <v-text-field required type="email" :rules="emailRules" v-model="email" label="E-mail"></v-text-field>
+      <v-text-field required type="password" :rules="passwordRules" v-model="password" label="Password"></v-text-field>
+      <v-btn color="success" :disabled="!valid" type="submit">Logar</v-btn>
+    </v-form>
   </div>
 </template>
 
 <script>
-import Input from "@/components/Input.vue";
-// import Button from '@/components/Button.vue';
-import { required, email } from "vuelidate/lib/validators";
-
 export default {
   name: "home",
-  components: {
-    Input,
-    // Button
-  },
   data() {
     return {
       email: "",
+      emailRules: [
+        v => !!v || 'E-mail obrigatório!',
+        v => /.+@.+\..+/.test(v) || 'E-mail deve ser válido',
+      ],
       password: "",
-      submitted: false
+      passwordRules: [
+        v => !!v || 'Password obrigatório!',
+      ],
+      valid: true
     };
-  },
-  validations: {
-    form: {
-      password: { required },
-      email: { required, email }
-    }
   },
   methods: {
     handleSubmit: () => {
-      this.submitted = true;
-      this.$v.$touch();
-      if (this.$v.$invalid) {
-        return;
-      }
       console.log('logando')
     }
   },
@@ -54,19 +42,13 @@ export default {
   flex-direction: column;
 
   &-title {
-    margin: 200px 0 20px;
+    margin: 200px 0 0;
   }
 
   &-section {
     width: 350px;
     display: flex;
     flex-direction: column;
-
-    & > input {
-      &:not(:last-child) {
-        margin-bottom: 20px;
-      }
-    }
   }
 }
 </style>
