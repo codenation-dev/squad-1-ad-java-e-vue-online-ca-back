@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,17 +17,16 @@ public class UserController {
     UserServiceImpl userServiceImpl;
     
     @PostMapping
-    public void cadastraUsuario() {        
+    public void cadastraUsuario(@RequestParam String userName, @RequestParam String password, @RequestParam String email) {        
         User user = new User();
-        user.setName("User1");
-        user.setPassword("password");
-        user.setEmail("a@a.com.br");
-        
+        user.setName(userName);
+        user.setPassword(password);
+        user.setEmail(email);
+
         this.userServiceImpl.save(user);
     }
   
-    
-    //Método de teste:
+    //Método de teste (excluir posteriormente):
     @GetMapping
     public Iterable retornaListaUsuariosCadastrados() {
         return this.userServiceImpl.findAll();
