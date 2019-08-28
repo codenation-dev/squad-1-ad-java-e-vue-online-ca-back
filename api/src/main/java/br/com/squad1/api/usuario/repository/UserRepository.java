@@ -1,7 +1,11 @@
 package br.com.squad1.api.usuario.repository;
 
-public class UserRepository {
+import br.com.squad1.api.usuario.model.User;
+import java.util.Optional;
+import org.springframework.data.repository.CrudRepository;
 
-  //Falta implementar.
-  
+public interface UserRepository extends CrudRepository<User, Long> {
+    User save(User user);
+    Optional<User> findById(Long userId);
+    Iterable<User> findAll();
 }
