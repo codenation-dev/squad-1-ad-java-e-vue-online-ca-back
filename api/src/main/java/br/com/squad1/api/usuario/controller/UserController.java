@@ -20,8 +20,6 @@ public class UserController {
     
     @PostMapping
     public void cadastraUsuario(@RequestBody UserForm userForm) {        
-      
-      System.out.println(userForm.getEmail());
       User user = userForm.converter();
       this.userServiceImpl.save(user);
     }

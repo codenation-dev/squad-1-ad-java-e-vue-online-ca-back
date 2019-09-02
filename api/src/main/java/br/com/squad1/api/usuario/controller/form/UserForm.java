@@ -4,24 +4,24 @@ import br.com.squad1.api.usuario.model.User;
 import org.springframework.web.bind.annotation.RequestParam;
 
 public class UserForm {
-  private String userName;
-  private String password;
+  private String nome;
+  private String senha;
   private String email;
 
-  public String getUserName() {
-    return userName;
+  public String getNome() {
+    return nome;
   }
 
-  public void setUserName(String userName) {
-    this.userName = userName;
+  public void setNome(String nome) {
+    this.nome = nome;
   }
 
-  public String getPassword() {
-    return password;
+  public String getSenha() {
+    return senha;
   }
 
-  public void setPassword(String password) {
-    this.password = password;
+  public void setSenha(String senha) {
+    this.senha = senha;
   }
 
   public String getEmail() {
@@ -33,7 +33,6 @@ public class UserForm {
   }
 
   public User converter() {
-    return new User(this.userName, this.password, this.email);
+    return new User(this.nome, this.senha, this.email);
   }
-          
 }
