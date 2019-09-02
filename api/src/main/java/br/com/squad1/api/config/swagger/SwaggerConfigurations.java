@@ -18,6 +18,5 @@ public class SwaggerConfigurations {
             .paths(PathSelectors.ant("/**"))
             .build();
             //.ignoredParameterTypes(User.java);
-  }
-  
+  } 
 }

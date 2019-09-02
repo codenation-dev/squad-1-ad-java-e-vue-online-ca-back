@@ -20,7 +20,7 @@ public class UserController {
     public void cadastraUsuario(@RequestParam String userName, @RequestParam String password, @RequestParam String email) {        
         User user = new User();
         user.setName(userName);
-        user.setPassword(password);
+        user.setSenha(password);
         user.setEmail(email);
 
         this.userServiceImpl.save(user);
