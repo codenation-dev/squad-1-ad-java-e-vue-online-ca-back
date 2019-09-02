@@ -31,7 +31,4 @@ public class UserController {
     public Iterable retornaListaUsuariosCadastrados() {
         return this.userServiceImpl.findAll();
     }
-  
-  
-    
 }
