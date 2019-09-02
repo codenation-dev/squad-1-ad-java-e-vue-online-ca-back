@@ -2,6 +2,10 @@
 
 API da Central de erros. 
 
+# Swagger docs: http://localhost:8080/swagger-ui.html
+
+<br><br>
+
 ##### Endpoints com implementações já iniciadas:
 - /register
 Após subir a aplicação pode-se enviar alguns comandos POST:
