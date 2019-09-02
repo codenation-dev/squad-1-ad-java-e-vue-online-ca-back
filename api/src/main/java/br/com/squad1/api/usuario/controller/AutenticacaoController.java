@@ -1,7 +1,7 @@
 package br.com.squad1.api.usuario.controller;
 
 import br.com.squad1.api.config.security.TokenService;
-import br.com.squad1.api.usuario.controller.dtop.TokenDTO;
+import br.com.squad1.api.usuario.controller.dto.TokenDTO;
 import br.com.squad1.api.usuario.controller.form.LoginForm;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package br.com.squad1.api.usuario.controller.dtop;
+package br.com.squad1.api.usuario.controller.dto;
 
 public class TokenDTO {
 
