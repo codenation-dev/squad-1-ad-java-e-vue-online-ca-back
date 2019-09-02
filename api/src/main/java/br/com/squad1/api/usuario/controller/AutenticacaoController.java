@@ -1,6 +1,7 @@
 package br.com.squad1.api.usuario.controller;
 
 import br.com.squad1.api.config.security.TokenService;
+import br.com.squad1.api.usuario.controller.dtop.TokenDTO;
 import br.com.squad1.api.usuario.controller.form.LoginForm;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +33,7 @@ public class AutenticacaoController {
         try {
             Authentication authentication = this.authManager.authenticate(dadosLogin);
             String token = tokenService.gerarToken(authentication);
-            //System.out.println(token);
-            return ResponseEntity.ok().build();
+            return ResponseEntity.ok(new TokenDTO(token, "Bearer"));
         }
         catch(AuthenticationException ex) {
             return ResponseEntity.badRequest().build();
