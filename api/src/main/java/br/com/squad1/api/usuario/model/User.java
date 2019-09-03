@@ -27,7 +27,7 @@ public class User implements UserDetails {
     private String nome;
 
     @NotNull
-    @Size (max =  50)
+    @Size (max =  200)
     private String senha;
 
     @NotNull
@@ -46,8 +46,6 @@ public class User implements UserDetails {
       this.senha = senha;
       this.email = email;
     }
-    
-    
     
     public Long getId() {
       return id;
@@ -115,5 +113,4 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
 }
