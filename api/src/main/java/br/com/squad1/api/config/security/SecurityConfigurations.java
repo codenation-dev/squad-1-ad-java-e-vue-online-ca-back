@@ -38,6 +38,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter  {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(autenticacaoService).passwordEncoder(new BCryptPasswordEncoder());
+        //Problema de autenticação está aqui. Verificar como está sendo salva a senha no DB.
     }
 
     //Configurações de autorização:
@@ -59,4 +60,10 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter  {
     public void configure(WebSecurity web) throws Exception {
       web.ignoring().antMatchers("/**.html", "/v2/api-docs", "/webjars/**", "/configuration/**", "/swagger-resources/**");
     }
+    
+    
+  //    public static void main(String[] args) {
+  //      String valor = new BCryptPasswordEncoder().encode("123456");
+  //      System.out.println(valor);
+  //    }
 }
