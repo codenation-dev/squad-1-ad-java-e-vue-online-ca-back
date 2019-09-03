@@ -26,16 +26,20 @@ public class AutenticacaoController {
     private TokenService tokenService;
     
     @PostMapping
-    public ResponseEntity<?> autenticar(@RequestBody @Valid LoginForm form) {
+    public ResponseEntity<TokenDTO> autenticar(@RequestBody @Valid LoginForm form) {
         
+      System.out.println(form.getEmail());
+      
         UsernamePasswordAuthenticationToken dadosLogin = form.converter();
         
         try {
             Authentication authentication = this.authManager.authenticate(dadosLogin);
             String token = tokenService.gerarToken(authentication);
+            System.out.println("token: " + token);
             return ResponseEntity.ok(new TokenDTO(token, "Bearer"));
         }
         catch(AuthenticationException ex) {
+            System.out.println("Erro ao gerar auth: " + ex.getMessage());
             return ResponseEntity.badRequest().build();
         }
     }
