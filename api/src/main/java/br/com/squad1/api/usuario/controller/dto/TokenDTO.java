@@ -3,18 +3,18 @@ package br.com.squad1.api.usuario.controller.dto;
 public class TokenDTO {
 
     private String token;
-    private String tipo;
+    private String type;
     
-    public TokenDTO(String token, String tipo) {
+    public TokenDTO(String token, String type) {
         this.token = token;
-        this.tipo = tipo;
+        this.type = type;
     }
 
     public String getToken() {
         return token;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getType() {
+        return type;
     }
 }

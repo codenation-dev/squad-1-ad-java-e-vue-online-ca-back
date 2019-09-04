@@ -24,11 +24,11 @@ public class User implements UserDetails {
 
     @NotNull
     @Size (max =  150)
-    private String nome;
+    private String name;
 
     @NotNull
     @Size (max =  200)
-    private String senha;
+    private String password;
 
     @NotNull
     @Email
@@ -41,9 +41,9 @@ public class User implements UserDetails {
       
     }
 
-    public User(String nome, String senha, String email) {
-      this.nome = nome;
-      this.senha = senha;
+    public User(String name, String password, String email) {
+      this.name = name;
+      this.password = password;
       this.email = email;
     }
     
@@ -56,19 +56,15 @@ public class User implements UserDetails {
     }
 
     public String getName() {
-      return nome;
+      return name;
     }
 
     public void setName(String name) {
-      this.nome = name;
+      this.name = name;
     }
 
-    public String getSenha() {
-      return senha;
-    }
-
-    public void setSenha(String senha) {
-      this.senha = senha;
+    public void setPassword(String senha) {
+      this.password = senha;
     }
 
     public String getEmail() {
@@ -86,7 +82,7 @@ public class User implements UserDetails {
 
     @Override
     public String getPassword() {
-        return this.senha;
+        return this.password;
     }
 
     @Override
