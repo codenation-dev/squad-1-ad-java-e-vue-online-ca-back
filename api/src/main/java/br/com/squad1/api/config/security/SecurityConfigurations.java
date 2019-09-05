@@ -52,6 +52,8 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter  {
                 .antMatchers("/h2/*").permitAll()
                 .antMatchers("/h2/").permitAll()
                 .antMatchers("/h2").permitAll()
+                .antMatchers("/log").permitAll()
+                .antMatchers("/log/**").permitAll()
                 .anyRequest().authenticated()
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
