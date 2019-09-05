@@ -26,7 +26,7 @@ public class AutenticacaoViaTokenFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain fc) throws ServletException, IOException {
         String token = recuperarToken(request);
         boolean valido = this.tokenService.isTokenValido(token);
-        
+
         if (valido) {
             autenticarCliente(token);
         }
@@ -36,7 +36,7 @@ public class AutenticacaoViaTokenFilter extends OncePerRequestFilter {
 
     private String recuperarToken(HttpServletRequest request) {
         String token = request.getHeader("Authorization");
-        if(token == null || token.isEmpty() || token.startsWith("Bearer ")) {
+        if(token == null || token.isEmpty() || !token.startsWith("Bearer ")) {
             return null;
         }
         return token.substring(7, token.length());
