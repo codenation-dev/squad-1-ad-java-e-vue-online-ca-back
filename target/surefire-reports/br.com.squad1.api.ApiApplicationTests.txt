@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: br.com.squad1.api.ApiApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.783 s - in br.com.squad1.api.ApiApplicationTests
