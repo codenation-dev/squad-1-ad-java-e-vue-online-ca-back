@@ -1,5 +1,6 @@
 package br.com.squad1.api.log.controller.form;
 
+import br.com.squad1.api.level.model.Level;
 import br.com.squad1.api.log.model.Log;
 
 public class LogForm {
@@ -8,6 +9,7 @@ public class LogForm {
     private String origin;
     private Integer totalEvents;
     private String details;
+    private Level level;
 
     public String getDescription() {
         return description;
@@ -40,8 +42,17 @@ public class LogForm {
     public void setDetails(String details) {
         this.details = details;
     }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
+    }
+
     
     public Log converter() {
-        return new Log(this.description, this.origin, this.totalEvents, this.details);
+        return new Log(this.description, this.origin, this.totalEvents, this.details, new Level());
     }
 }
