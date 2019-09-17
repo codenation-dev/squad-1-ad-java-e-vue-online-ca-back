@@ -7,25 +7,21 @@ services:
   db:
     image: postgres:10.9-alpine
     volumes:
-      - db-data:/var/lib/postgresql/data/
-      - ./scripts:/scripts
-      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init-user-db.sh
+      - ./postgresql:/var/lib/postgresql
+      # - ./scripts:/scripts
+      # - ./scripts/init.sql:/docker-entrypoint-initdb.d/init-user-db.sh
     environment:
       - POSTGRES_PASSWORD=postgres
     ports:
-      - "5432:5432"
+      - "55432:55432"
 
   api:
-    image: amazoncorretto:8
+    image: maven:3.6-alpine
     volumes:
-      - ./api:/api
+      - ./:/usr/src/mymaven
     ports:
-      - 3000:3000
-    command: bash -c "ls"
-
-  app:
-    image: node:lts-alpine
-    volumes:
-      - ./app:/app
-    ports:
-      - 5000:5000
+      - 8080:8080
+    depends_on:
+      - db
+    working_dir: /usr/src/mymaven
+    command: bash -c "mvn compile && mvn package && mvn spring-boot:run"
