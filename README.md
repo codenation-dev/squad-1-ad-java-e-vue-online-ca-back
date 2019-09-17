@@ -25,15 +25,10 @@ Empacotar:
 > mvn package
 
 
-Acessar o diretorio target:
-
-> cd target
-
-
 Subir aplicação:
 
 
-> java -jar api-0.0.1-SNAPSHOT.jar
+> mvn spring-boot:run
 
 
 *Para testar, acessar no navegador localhost:8080/register, a resposta será um json vazio [].*
