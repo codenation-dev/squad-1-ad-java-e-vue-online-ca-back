@@ -25,8 +25,8 @@ public class Level {
     //Falta relacionamento com tabela Log
     
     //@OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
-    @OneToMany(mappedBy = "id")
-    private List<Log> log;
+//    @OneToMany(mappedBy = "id")
+//    private List<Log> log;
     
     public Level() {
       

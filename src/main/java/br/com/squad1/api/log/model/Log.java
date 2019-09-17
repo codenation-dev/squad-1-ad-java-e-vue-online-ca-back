@@ -34,9 +34,9 @@ public class Log {
     private String details;
     
     //Falta relacionamento com tabela Levels
-    @ManyToOne
-    @JoinColumn
-    private Level level;
+//    @ManyToOne
+//    @JoinColumn(name = "level_id")
+//    private Level level;
     
     //Falta atributo created_at 
     
@@ -44,12 +44,11 @@ public class Log {
       
     }
 
-    public Log(String description, String origin, Integer totalEvents, String details, Level level) {
+    public Log(String description, String origin, Integer totalEvents, String details) {
         this.description = description;
         this.origin = origin;
         this.totalEvents = totalEvents;
         this.details = details;
-        this.level = level;
     }
 
     public Long getId() {

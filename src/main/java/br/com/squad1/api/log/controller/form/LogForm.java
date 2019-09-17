@@ -53,6 +53,7 @@ public class LogForm {
 
     
     public Log converter() {
-        return new Log(this.description, this.origin, this.totalEvents, this.details, new Level());
+        //return new Log(this.description, this.origin, this.totalEvents, this.details, new Level());
+        return new Log(this.description, this.origin, this.totalEvents, this.details);
     }
 }
