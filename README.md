@@ -1,38 +1,59 @@
-Central de erros - API BACKEND
+# Central de Erros - Back-end (API)
 
-Instalar Maven:
+> Desafio final da Aceleração Dev de Java da Codenation, com apoio da Conta Azul.
 
-> Instruções em: https://maven.apache.org/install.html
+## Tecnologia
 
+- Java 8
+- Spring Boot
+- Maven
+- PostgreSQL
+- Swagger
+- jUnit
+- Docker
 
-Clonar repositório:
+## Instalação
 
-> https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-back.git
+### Clonagem do repositório:
 
+```bash
+$ git clone https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-back.git
+```
 
-Acessar diretorio "squad-1-ad-java-e-vue-online-ca-back":
+### Compilação e empacotamento
 
-> cd squad-1-ad-java-e-vue-online-ca-back
+Será necessário ter o Maven instalado. Instruções para instalação: [https://maven.apache.org/install.html](https://maven.apache.org/install.html).
 
+```bash
+$ cd squad-1-ad-java-e-vue-online-ca-back
+$ mvn compile
+$ mvn package
+```
 
-Compilar:
+### Executando a aplicação
+```bash
+$ cd squad-1-ad-java-e-vue-online-ca-back
+$ mvn spring-boot:run
+```
 
-> mvn compile
+Para testar a aplicação acesse ```http://localhost:8080/register``` pelo navegador web. Se a resposta for um JSON vazio a aplicação está funcionando corretamente.
 
+### Executando via Docker
 
-Empacotar:
+Acesse o diretório da aplicação e execute:
+```bash
+$ docker-compose up
+```
 
-> mvn package
+## Documentação da API:
 
+A documentação da API pode ser acessada em ```http://localhost:8080/swagger-ui.html```.
 
-Subir aplicação:
+## Equipe
 
+- [Aislan Nadrowski](https://github.com/ANadrowski) 
+- [Adjamilton Junior](https://github.com/ajunior)
 
-> mvn spring-boot:run
+## Front-end
 
-
-*Para testar, acessar no navegador localhost:8080/register, a resposta será um json vazio [].*
-
-Documentação da API disponivel em:
-
-> Swagger docs: http://localhost:8080/swagger-ui.html
+O front-end para esta aplicação foi desenvolvido por [David Alves](https://github.com/davidalves1), participante da Aceleração Dev de Vue.js, e seu código está hospedado [aqui](https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-front).
