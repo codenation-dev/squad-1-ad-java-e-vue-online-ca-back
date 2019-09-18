@@ -1,18 +1,19 @@
 package br.com.squad1.api.log.model;
 
 import br.com.squad1.api.level.model.Level;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class Log {
-  
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,28 +28,29 @@ public class Log {
     private String origin;
 
     @NotNull
-    private Integer totalEvents;
-
-    @NotNull
     @Size (max =  500)
     private String details;
-    
+
     //Falta relacionamento com tabela Levels
-//    @ManyToOne
-//    @JoinColumn(name = "level_id")
-//    private Level level;
-    
-    //Falta atributo created_at 
-    
+    @OneToOne
+    @JoinColumn(name = "level_id")
+    private Level level;
+
+    @Column
+    @CreatedDate
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
+    private LocalDateTime createdAt;
+
     public Log() {
-      
+
     }
 
-    public Log(String description, String origin, Integer totalEvents, String details) {
+    public Log(String description, String origin, String details, Level level, LocalDateTime createdAt) {
         this.description = description;
         this.origin = origin;
-        this.totalEvents = totalEvents;
         this.details = details;
+        this.level = level;
+        this.createdAt = createdAt;
     }
 
     public Long getId() {
@@ -75,19 +77,27 @@ public class Log {
         this.origin = origin;
     }
 
-    public Integer getTotalEvents() {
-        return totalEvents;
-    }
-
-    public void setTotalEvents(Integer totalEvents) {
-        this.totalEvents = totalEvents;
-    }
-
     public String getDetails() {
         return details;
     }
 
     public void setDetails(String details) {
         this.details = details;
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }

@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 public class Level {
-  
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,14 +22,11 @@ public class Level {
     @Size (max =  500)
     private String tag;
 
-    //Falta relacionamento com tabela Log
-    
-    //@OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
-//    @OneToMany(mappedBy = "id")
-//    private List<Log> log;
-    
+    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
+    private List<Log> log;
+
     public Level() {
-      
+
     }
 
     public Long getId() {
@@ -46,5 +43,13 @@ public class Level {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public List<Log> getLog() {
+        return log;
+    }
+
+    public void setLog(List<Log> log) {
+        this.log = log;
     }
 }

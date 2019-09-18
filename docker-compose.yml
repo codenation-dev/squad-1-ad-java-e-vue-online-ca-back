@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 volumes:
   db-data:
@@ -8,8 +8,6 @@ services:
     image: postgres:10.9-alpine
     volumes:
       - ./postgresql:/var/lib/postgresql
-      # - ./scripts:/scripts
-      # - ./scripts/init.sql:/docker-entrypoint-initdb.d/init-user-db.sh
     environment:
       - POSTGRES_PASSWORD=postgres
     ports:

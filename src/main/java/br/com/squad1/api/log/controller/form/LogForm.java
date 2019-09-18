@@ -3,13 +3,15 @@ package br.com.squad1.api.log.controller.form;
 import br.com.squad1.api.level.model.Level;
 import br.com.squad1.api.log.model.Log;
 
+import java.time.LocalDateTime;
+
 public class LogForm {
 
     private String description;
     private String origin;
-    private Integer totalEvents;
     private String details;
     private Level level;
+    private LocalDateTime createdAt;
 
     public String getDescription() {
         return description;
@@ -25,14 +27,6 @@ public class LogForm {
 
     public void setOrigin(String origin) {
         this.origin = origin;
-    }
-
-    public Integer getTotalEvents() {
-        return totalEvents;
-    }
-
-    public void setTotalEvents(Integer totalEvents) {
-        this.totalEvents = totalEvents;
     }
 
     public String getDetails() {
@@ -51,9 +45,15 @@ public class LogForm {
         this.level = level;
     }
 
-    
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
     public Log converter() {
-        //return new Log(this.description, this.origin, this.totalEvents, this.details, new Level());
-        return new Log(this.description, this.origin, this.totalEvents, this.details);
+        return new Log(this.description, this.origin, this.details, new Level(), this.createdAt);
     }
 }
