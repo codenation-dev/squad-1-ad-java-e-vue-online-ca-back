@@ -6,6 +6,7 @@ import br.com.squad1.api.usuario.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +20,7 @@ public class UserController {
     @Autowired
     UserServiceImpl userServiceImpl;
     
+    @CrossOrigin(origins = "*")
     @PostMapping
     public ResponseEntity<User> cadastraUsuario(@RequestBody UserForm userForm) {        
         try {
@@ -32,6 +34,7 @@ public class UserController {
    }
   
     //Método de teste (excluir posteriormente):
+    @CrossOrigin(origins = "*")
     @GetMapping
     public Iterable retornaListaUsuariosCadastrados() {
         return this.userServiceImpl.findAll();
