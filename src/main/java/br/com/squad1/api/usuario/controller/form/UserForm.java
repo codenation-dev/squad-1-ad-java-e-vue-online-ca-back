@@ -34,7 +34,6 @@ public class UserForm {
   }
 
   public User converter() {
-    //return new User(this.name, new BCryptPasswordEncoder().encode(this.password), this.email);
-    return new User(this.name, this.password, this.email);
+    return new User(this.name, new BCryptPasswordEncoder().encode(this.password), this.email);
   }
 }
