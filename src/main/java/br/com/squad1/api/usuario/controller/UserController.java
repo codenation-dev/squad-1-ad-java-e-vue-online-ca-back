@@ -20,7 +20,6 @@ public class UserController {
     @Autowired
     UserServiceImpl userServiceImpl;
     
-    @CrossOrigin(origins = "*")
     @PostMapping
     public ResponseEntity<User> cadastraUsuario(@RequestBody UserForm userForm) {        
         try {
