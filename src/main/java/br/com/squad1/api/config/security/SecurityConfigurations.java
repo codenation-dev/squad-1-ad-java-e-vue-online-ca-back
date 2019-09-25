@@ -2,6 +2,7 @@ package br.com.squad1.api.config.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -41,7 +42,8 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
             "/register/",
             "/register/*",
             "/register/**",
-            "/webjars/**");
+            "/webjars/**")
+            .antMatchers(HttpMethod.OPTIONS);
   }
 
   @Override
