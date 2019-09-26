@@ -56,4 +56,4 @@ A documentação da API pode ser acessada em ```http://localhost:8080/swagger-ui
 
 ## Front-end
 
-O front-end para esta aplicação foi desenvolvido por [David Alves](https://github.com/davidalves1), participante da Aceleração Dev de Vue.js, e seu código está hospedado [aqui](https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-front).
+O [front-end](https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-front) para esta aplicação foi desenvolvido por [David Alves](https://github.com/davidalves1), participante da Aceleração Dev de Vue.js.
