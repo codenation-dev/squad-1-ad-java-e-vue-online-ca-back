@@ -21,7 +21,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-@Table(uniqueConstraints={@UniqueConstraint(columnNames={"email"})})
+@Table(name = "users", uniqueConstraints={@UniqueConstraint(columnNames={"email"})})
 public class User implements UserDetails {
   
     @Id

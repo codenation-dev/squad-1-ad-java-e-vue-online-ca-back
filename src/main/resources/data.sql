@@ -1,3 +1,2 @@
-insert into level (tag) values ('Error');
-insert into level (tag) values ('Debug');
-insert into level (tag) values ('Warning');
+INSERT INTO levels (tag)
+    VALUES ('Error'), ('Debug'), ('Warning');
