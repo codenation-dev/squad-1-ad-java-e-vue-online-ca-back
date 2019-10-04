@@ -45,5 +45,5 @@ release.properties
 pom.xml.releaseBackup
 pom.xml.tag
 
-# h2 data
-#data/
+# .env
+.env

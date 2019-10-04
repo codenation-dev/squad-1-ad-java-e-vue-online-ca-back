@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/logs")
 public class LogController {
@@ -28,15 +30,20 @@ public class LogController {
             this.logServiceImpl.save(log);
             return new ResponseEntity<Log>(HttpStatus.CREATED);
         }
-        catch(Exception ex) {
+        catch(Exception e) {
             return new ResponseEntity<Log>(HttpStatus.CONFLICT);
         }
    }
-  
-    //Método de teste (excluir posteriormente):
+
     @CrossOrigin(origins = "*")
     @GetMapping
     public Iterable retornaListaLogsCadastrados() {
         return this.logServiceImpl.findAll();
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping
+    public Optional<Log> retornaLogDetalhado(Long logId) {
+        return this.logServiceImpl.findById(logId);
     }
 }

@@ -5,6 +5,8 @@ import br.com.squad1.api.log.repository.LogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class LogServiceImpl implements LogServiceInterface {
 
@@ -13,6 +15,11 @@ public class LogServiceImpl implements LogServiceInterface {
     
     public Log save(Log log) {
         return this.logRepository.save(log);
+    }
+
+    @Override
+    public Optional<Log> findById(Long logId) {
+        return this.logRepository.findById(logId);
     }
 
     @Override
