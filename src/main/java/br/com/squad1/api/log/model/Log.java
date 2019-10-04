@@ -1,6 +1,5 @@
 package br.com.squad1.api.log.model;
 
-import br.com.squad1.api.level.model.Level;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -32,10 +31,8 @@ public class Log {
     @Size (max =  500)
     private String details;
 
-    //Falta relacionamento com tabela Levels
-    @OneToOne
-    @JoinColumn(name = "level_id")
-    private Level level;
+    @Enumerated(EnumType.STRING)
+    private TypeLevel level;
 
     @Column
     @CreatedDate
@@ -46,12 +43,12 @@ public class Log {
 
     }
 
-    public Log(String description, String origin, String details, Level level, LocalDateTime createdAt) {
+    public Log(String description, String origin, String details, TypeLevel level) {
         this.description = description;
         this.origin = origin;
         this.details = details;
         this.level = level;
-        this.createdAt = createdAt;
+        this.createdAt = LocalDateTime.now();
     }
 
     public Long getId() {
@@ -86,11 +83,11 @@ public class Log {
         this.details = details;
     }
 
-    public Level getLevel() {
+    public TypeLevel getLevel() {
         return level;
     }
 
-    public void setLevel(Level level) {
+    public void setLevel(TypeLevel level) {
         this.level = level;
     }
 

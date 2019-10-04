@@ -1,7 +1,7 @@
 package br.com.squad1.api.log.controller.form;
 
-import br.com.squad1.api.level.model.Level;
 import br.com.squad1.api.log.model.Log;
+import br.com.squad1.api.log.model.TypeLevel;
 
 import java.time.LocalDateTime;
 
@@ -10,7 +10,7 @@ public class LogForm {
     private String description;
     private String origin;
     private String details;
-    private Level level;
+    private TypeLevel level;
     private LocalDateTime createdAt;
 
     public String getDescription() {
@@ -37,11 +37,11 @@ public class LogForm {
         this.details = details;
     }
 
-    public Level getLevel() {
+    public TypeLevel getLevel() {
         return level;
     }
 
-    public void setLevel(Level level) {
+    public void setLevel(TypeLevel level) {
         this.level = level;
     }
 
@@ -54,6 +54,6 @@ public class LogForm {
     }
 
     public Log converter() {
-        return new Log(this.description, this.origin, this.details, new Level(), this.createdAt);
+        return new Log(this.description, this.origin, this.details, this.level);
     }
 }
