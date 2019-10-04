@@ -8,4 +8,5 @@ import org.springframework.data.repository.CrudRepository;
 public interface LogRepository extends CrudRepository<Log, Long> {
     Log save(Log log);
     Iterable<Log> findAll();
+    Log findOneById(Long id);
 }
