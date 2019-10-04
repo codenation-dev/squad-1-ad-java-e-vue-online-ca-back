@@ -33,10 +33,10 @@ public class UserController {
         }
    }
   
-    //Método de teste (excluir posteriormente):
     @CrossOrigin(origins = "*")
     @GetMapping
     public Iterable retornaListaUsuariosCadastrados() {
         return this.userServiceImpl.findAll();
     }
+
 }

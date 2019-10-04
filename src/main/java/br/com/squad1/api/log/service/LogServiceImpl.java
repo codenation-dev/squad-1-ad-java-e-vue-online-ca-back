@@ -19,4 +19,12 @@ public class LogServiceImpl implements LogServiceInterface {
     public Iterable<Log> findAll() {
         return this.logRepository.findAll();
     }
+    
+    public Log findOneById(Long id) {
+        return this.logRepository.findOneById(id);
+    }
+    
+//    public Log findByOrigin() {
+//        return this.logRepository.findOneById()
+//    }
 }
