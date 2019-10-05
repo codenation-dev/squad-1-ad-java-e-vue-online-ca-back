@@ -1,27 +1,33 @@
+> Desafio final da Aceleração Dev de Java da Codenation, com apoio da Conta Azul.
+
 # Central de Erros - Back-end (API)
 
-> Desafio final da Aceleração Dev de Java da Codenation, com apoio da Conta Azul.
+Desenvolvimento de uma aplicação restful para registro e acesso a logs de erros registrados por microserviços, para possibilitar o monitoramento e auxiliar na tomada de decisão.
+
+*A aplicação foi desenvolvida em conformidade com as instruções para o projeto final.* 
 
 ## Tecnologia
 
-- Java 8
-- Spring Boot
-- Maven
-- PostgreSQL
-- Swagger
-- Docker
+- Java ```8```
+- Spring Boot ```2.1.7.RELEASE```
+- Maven ```3.6.2```
+- PostgreSQL ```11``` 
+- Swagger ```2.9.2```
+- Docker ```19.03.2```
 
 ## Instalação
 
-### Clonagem do repositório:
+A aplicação foi configurada pra ser executada com o Maven, portanto será necessário a instalado dessa ferramenta. 
+
+> Instalando o Maven: [https://maven.apache.org/install.html](https://maven.apache.org/install.html).
+
+### Clonando o repositório:
 
 ```bash
 $ git clone https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-back.git
 ```
 
-### Compilação e empacotamento
-
-Será necessário ter o Maven instalado. Instruções para instalação: [https://maven.apache.org/install.html](https://maven.apache.org/install.html).
+### Compilando e empacotando a aplicação
 
 ```bash
 $ cd squad-1-ad-java-e-vue-online-ca-back
@@ -30,39 +36,32 @@ $ mvn package
 ```
 
 ### Executando a aplicação
+
 ```bash
 $ cd squad-1-ad-java-e-vue-online-ca-back
 $ mvn spring-boot:run
 ```
 
-Para testar a aplicação acesse ```http://localhost:8080/register``` pelo navegador web. Se a resposta for um JSON vazio a aplicação está funcionando corretamente.
+> Para testar se a aplicação está em execução, acesse o endereço ```http://localhost:8080/users```. A resposta deve ser um JSON vazio.
 
-### Executando via Docker
+## Executando via Docker
 
-Acesse o diretório da aplicação e execute:
+A aplicação foi configurada para possibilitar sua execução via Docker.
+
 ```bash
+$ cd squad-1-ad-java-e-vue-online-ca-back
 $ docker-compose up
 ```
 
-## Documentação da API:
+## Endpoints
 
-A documentação da API pode ser acessada em ```http://localhost:8080/swagger-ui.html```.
+Após executar a aplicação, você pode acessar a documentação da API, contendo os endpoints implementados, no endereço ```http://localhost:8080/swagger-ui.html```.
 
-## Equipe
+## Equipe de desenvolvimento
 
 - [Aislan Nadrowski](https://github.com/ANadrowski) 
 - [Adjamilton Junior](https://github.com/ajunior)
-
-## Tabela de endpoints
-
-| Endpoint | Método | Descrição | Resposta | Exemplo de Resposta | Observações |
-| :--- | :---: | :--- | :--- | :--- | :--- |
-| localhost:8080/register | GET | Retorna lista de usuários cadastrados. | 200 OK | | |
-| localhost:8080/register | POST | Cadastra um usuário no sistema. | 201 CREATED <br>Usuário cadastrado com sucesso. <br><br>409 CONFLICT<br> Usuário já está cadastrado. | | Adicionar um header “Content-Type” com  valor “application/json”. Adicionar no body, em modo raw, a seguinte informação: { "name": "Pedro", "email": "pedro@pedro.com", "password": "123456" } |
-| localhost:8080/oauth/token | POST | Autenticar/Solicitar o token. | 200 OK <br>Autenticação com sucesso. | <code style="font-family: monospace;"> { "access_token": "f4f1b7ad-713a-473a-9273-9fdb5ce9abfc", "token_type": "bearer", "refresh_token": "ada96ee4-410b-4f13-9984-4b76b0303502", "expires_in": 43199, "scope": "password" } </code> | |
-| localhost:8080/logs | GET | Lista os logs cadastrados. | 200 OK | | |
-| localhost:8080/logs | POST | Cadastra um log no sistema. | 201 CREATED <br>Log cadastrado com sucesso. | | Em *Authorization*, usar a opção *Bearer Token* e informar o token fornecido pelo sistema. | 
-| localhost:8080/logs/{id} | GET | Retorna um log especifico, pelo id. | 200 OK | Exemplo:  acessando localhost:8080/logs/5 se o log está cadastrado, teremos como resposta:  { "id": 5, "description": "desc3", "origin": "20.20.20.22", "details": "detail2", "level": "ERROR", "createdAt": "2019-10-04 13:41" } | |
+    - :envelope: jr (at) ieee (dot) org
 
 ## Front-end
 
