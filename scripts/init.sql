@@ -13,14 +13,12 @@ CREATE TABLE IF NOT EXISTS users (
     email VARCHAR(40) NOT NULL UNIQUE, 
     passwd VARCHAR(64) NOT NULL, 
     created_at TIMESTAMP   DEFAULT NOW(),
-    
     PRIMARY KEY (user_id)
 );
 
 CREATE TABLE IF NOT EXISTS levels (
     level_id SERIAL NOT NULL,
     tag VARCHAR(20) NOT NULL,
-
     PRIMARY KEY (level_id)
 );
 
@@ -35,7 +33,6 @@ CREATE TABLE IF NOT EXISTS logs (
 	nr_events INT NOT NULL,
 	details TEXT NOT NULL,
 	created_at TIMESTAMP DEFAULT NOW(),
-	
     PRIMARY KEY (log_id),
     FOREIGN KEY (level_id) REFERENCES levels(level_id)	
 );
