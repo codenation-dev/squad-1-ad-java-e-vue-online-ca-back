@@ -6,21 +6,18 @@ import br.com.squad1.api.usuario.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/register")
+@RequestMapping("/users")
 public class UserController {
   
     @Autowired
     UserServiceImpl userServiceImpl;
     
-    @PostMapping
+    @PostMapping("/register")
     public ResponseEntity<User> cadastraUsuario(@RequestBody UserForm userForm) {        
         try {
             User user = userForm.converter();
@@ -30,12 +27,18 @@ public class UserController {
         catch(Exception ex) {
             return new ResponseEntity<User>(HttpStatus.CONFLICT);
         }
-   }
+    }
   
     @CrossOrigin(origins = "*")
     @GetMapping
     public Iterable retornaListaUsuariosCadastrados() {
         return this.userServiceImpl.findAll();
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/{id}")
+    public Optional<User> retornaUserById(@PathVariable Long userId) {
+        return this.userServiceImpl.findById(userId);
     }
 
 }
