@@ -2,7 +2,6 @@ package br.com.squad1.api.usuario.service;
 
 import br.com.squad1.api.usuario.model.User;
 import br.com.squad1.api.usuario.repository.UserRepository;
-import com.sun.javafx.scene.control.behavior.OptionalBoolean;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
