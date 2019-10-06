@@ -1,5 +1,6 @@
 package br.com.squad1.api.usuario.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -16,6 +17,9 @@ import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -33,13 +37,19 @@ public class User implements UserDetails {
     private String name;
 
     @NotNull
-    @Size (max =  200)
+    @Size (max =  64) // Tamanho de um SHA-256, conforme RFC 4634, section 5.1
     private String password;
 
     @NotNull
+    @Size (max =  254) // Conforme RFC 3696 e RFC 2821
     @Email
     @Column(name = "email")
     private String email;
+
+    @Column(columnDefinition = "timestamp default now()")
+    @CreatedDate
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
+    private LocalDateTime createdAt;
 
     public User() {
       

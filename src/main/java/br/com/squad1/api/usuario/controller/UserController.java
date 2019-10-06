@@ -40,5 +40,4 @@ public class UserController {
     public Optional<User> retornaUserById(@PathVariable Long userId) {
         return this.userServiceImpl.findById(userId);
     }
-
 }
