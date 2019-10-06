@@ -61,9 +61,17 @@ Após executar a aplicação, você pode acessar a documentação da API, conten
 
 ### UML
 
+<figure>
+<img src="https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-back/blob/master/assets/uml.png" alt="Imagem representando as classes da aplicação">
+<figcaption>Representação das Classes.</figcaption>
+</figure>
+
 ### Banco de Dados
 
-<img src="https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-back/blob/master/assets/db.png">
+<figure>
+<img src="https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-back/blob/master/assets/db.png" alt="Imagem representando as tabelas do banco de dados">
+<figcaption>Representação das tabelas do banco de dados.</figcaption>
+</figure>
 
 ## Equipe de desenvolvimento
 
