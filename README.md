@@ -35,6 +35,13 @@ $ mvn compile
 $ mvn package
 ```
 
+### Testando a aplicação
+
+```bash
+$ cd squad-1-ad-java-e-vue-online-ca-back
+$ mvn test
+```
+
 ### Executando a aplicação
 
 ```bash
