@@ -65,8 +65,8 @@
     </dependency>
     
     <dependency>
-	<groupId>org.postgresql</groupId>
-	<artifactId>postgresql</artifactId>
+	  <groupId>org.postgresql</groupId>
+	  <artifactId>postgresql</artifactId>
     </dependency>
 
 <!-- Declaração direta para evitar problema no mvn compile -->
@@ -76,8 +76,6 @@
 	    <version>2.0.1.Final</version>
 	</dependency>
 
-
-                
   </dependencies>
 
   <build>
