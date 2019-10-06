@@ -59,9 +59,9 @@ Após executar a aplicação, você pode acessar a documentação da API, conten
 
 ## Diagramas
 
-Representação visual dos diagramas de classe e do banco de dados.
+Representação visual das classes da aplicação e das tabelas do banco de dados.
 
-#### UML
+#### Classe
 
 <img src="https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-back/blob/master/assets/uml.png" alt="Imagem representando as classes da aplicação">
 
@@ -80,10 +80,10 @@ O [front-end](https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-
 
 ## Deploy
 
-Para fins de demonstração de funcionamento, foi feito o deploy da aplicação nas plataformas [Heroku](https://www.heroku.com/) (back-end) e [Netlify](https://www.netlify.com/) (front-end).
+Para fins de demonstração de funcionamento, foi feito o deploy da aplicação nas plataformas [Heroku](https://www.heroku.com/) e [Netlify](https://www.netlify.com/).
 
-- **Instâncias:**
-    - [Front-end](https://squad-1-front.netlify.com)
-    - [Back-end](https://squad-1-back.herokuapp.com)
-
-> *Uma terceira instância foi criada no Heroku para o banco de dados PostgreSQL.*
+| Plataforma | Serviço | Link |
+| :--- | :--- | :--- |
+| Netlify | Front-end | [https://squad-1-front.netlify.com](https://squad-1-front.netlify.com)|
+| Heroku | Back-end | *Sem acesso externo* |
+| Heroku | Banco de Dados | *Sem acesso externo* |
