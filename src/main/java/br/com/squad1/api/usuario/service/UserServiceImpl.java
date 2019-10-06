@@ -30,5 +30,4 @@ public class UserServiceImpl implements UserServiceInterface {
     public Optional<User> findByEmail(String email) {
         return this.userRepository.findByEmail(email);
     }
-  
 }
