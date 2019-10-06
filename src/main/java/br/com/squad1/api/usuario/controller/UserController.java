@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.Optional;
 
 @RestController
@@ -18,14 +19,14 @@ public class UserController {
     UserServiceImpl userServiceImpl;
     
     @PostMapping("/register")
-    public ResponseEntity<User> cadastraUsuario(@RequestBody UserForm userForm) {        
+    public ResponseEntity<User> cadastraUsuario(@RequestBody UserForm userForm) {
         try {
             User user = userForm.converter();
             this.userServiceImpl.save(user);
-            return new ResponseEntity<User>(HttpStatus.CREATED);
+            return new ResponseEntity<>(HttpStatus.CREATED);
         }
         catch(Exception ex) {
-            return new ResponseEntity<User>(HttpStatus.CONFLICT);
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
     }
   

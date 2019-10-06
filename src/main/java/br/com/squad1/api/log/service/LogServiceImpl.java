@@ -5,6 +5,8 @@ import br.com.squad1.api.log.repository.LogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service
 public class LogServiceImpl implements LogServiceInterface {
 
@@ -12,6 +14,7 @@ public class LogServiceImpl implements LogServiceInterface {
     LogRepository logRepository;
     
     public Log save(Log log) {
+        log.setCreatedAt(LocalDateTime.now());
         return this.logRepository.save(log);
     }
 

@@ -42,10 +42,10 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
                 "/h2/**",
                 "/h2/*",
                 "/h2",
-                "/users",
-                "/users/",
-                "/users/*",
-                "/users/**",
+
+                "/users/register",
+
+
                 "/webjars/**");
     }
 

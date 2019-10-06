@@ -2,6 +2,8 @@ package br.com.squad1.api.usuario.service;
 
 import br.com.squad1.api.usuario.model.User;
 import br.com.squad1.api.usuario.repository.UserRepository;
+
+import java.time.LocalDateTime;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,7 @@ public class UserServiceImpl implements UserServiceInterface {
     UserRepository userRepository;
     
     public User save(User user) {
+        user.setCreatedAt(LocalDateTime.now());
         return this.userRepository.save(user);
     }
     
