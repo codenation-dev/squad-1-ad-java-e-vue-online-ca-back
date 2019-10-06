@@ -8,6 +8,5 @@ public interface UserRepository extends CrudRepository<User, Long> {
     User save(User user);
     Optional<User> findById(Long userId);
     Iterable<User> findAll();
-    
     Optional<User> findByEmail(String email);
 }
