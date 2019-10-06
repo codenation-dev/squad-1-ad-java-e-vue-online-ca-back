@@ -24,7 +24,7 @@ public class Log {
 
     //IP de origem
     @NotNull
-    @Size (max =  50)
+    @Size (max =  39) // Capacidade suficiente para um endereço IPv6
     private String origin;
 
     @NotNull
@@ -34,7 +34,7 @@ public class Log {
     @Enumerated(EnumType.STRING)
     private TypeLevel level;
 
-    @Column
+    @Column(columnDefinition = "timestamp default now()")
     @CreatedDate
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime createdAt;

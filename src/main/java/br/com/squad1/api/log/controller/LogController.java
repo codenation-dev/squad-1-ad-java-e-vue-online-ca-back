@@ -34,7 +34,7 @@ public class LogController {
         catch(Exception ex) {
             return new ResponseEntity<Log>(HttpStatus.CONFLICT);
         }
-   }
+    }
   
     @CrossOrigin(origins = "*")
     @GetMapping
@@ -47,5 +47,4 @@ public class LogController {
     public Log findById(@PathVariable Long id) {
         return logServiceImpl.findOneById(id);
     }
-    
 }
