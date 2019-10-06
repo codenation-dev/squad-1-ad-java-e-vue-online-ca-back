@@ -18,7 +18,8 @@ public class UserServiceImpl implements UserServiceInterface {
     
     @Override
     public Optional<User> findById(Long userId) {
-        throw new UnsupportedOperationException("Falta implementar."); 
+        //throw new UnsupportedOperationException("Falta implementar.");
+        return this.userRepository.findById(userId);
     }
 
     @Override
