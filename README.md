@@ -8,10 +8,10 @@ Desenvolvimento de uma aplicação restful para registro e acesso a logs de erro
 
 ## Tecnologia
 
-- Java ```8```
+- Java ```1.8```
 - Spring Boot ```2.1.7.RELEASE```
 - Maven ```3.6.2```
-- PostgreSQL ```11``` 
+- PostgreSQL ```10.9``` 
 - Swagger ```2.9.2```
 - Docker ```19.03.2```
 
@@ -57,11 +57,18 @@ $ docker-compose up
 
 Após executar a aplicação, você pode acessar a documentação da API, contendo os endpoints implementados, no endereço ```http://localhost:8080/swagger-ui.html```.
 
+## Diagramas
+
+### UML
+
+### Banco de Dados
+
+<img src="https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-back/blob/master/assets/db.png">
+
 ## Equipe de desenvolvimento
 
 - [Aislan Nadrowski](https://github.com/ANadrowski) 
 - [Adjamilton Junior](https://github.com/ajunior)
-    - :envelope: jr (at) ieee (dot) org
 
 ## Front-end
 
