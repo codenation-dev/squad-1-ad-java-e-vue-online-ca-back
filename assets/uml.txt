@@ -1,0 +1,64 @@
+@startuml
+
+Log <|- TypeLevel
+
+class User {
+  - Long id
+  - String name
+  - String email
+  - String password
+  - Date createdAt
+  __
+  .. Getters ..
+  + Long getId()
+  + String getName()
+  + String getEmail()
+  + String getPassword()
+  + Date getCreatedAt()
+  .. Setters ..
+  + void setId()
+  + void setName()
+  + void setEmail()
+  + void setPassword()
+  + void setCreatedAt()
+  .. Others ..
+  + Collection<? extends GrantedAuthority> getAuthorities()
+  + String getUsername()
+  + String getPassword()
+  + Bool isAccountNonExpired()
+  + Bool isAccountNonLocked()
+  + Bool isCredentialsNonExpired()
+  + Bool isEnabled()
+}
+
+class Log {
+  - Long id
+  - String description
+  - String details
+  - String level
+  - String origin
+  - Date createdAt
+  __
+  .. Getters ..
+  + Long getId()
+  + String getDescription()
+  + String getDetails()
+  + String getLevel()
+  + String getOrigin()
+  + Date getCreatedAt()
+  .. Setters ..
+  + void setId()
+  + void setDescription()
+  + void setDetails()
+  + void setLevel()
+  + void setOrigin()
+  + void setCreatedAt()
+}
+
+enum TypeLevel {
+  ERROR
+  DEBUG
+  WARNING
+}
+
+@enduml
