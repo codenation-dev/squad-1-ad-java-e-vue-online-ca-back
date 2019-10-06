@@ -38,7 +38,7 @@ public class UserController {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/{id}")
-    public Optional<User> retornaUserById(@PathVariable Long userId) {
-        return this.userServiceImpl.findById(userId);
+    public Optional<User> retornaUserById(@PathVariable Long id) {
+        return userServiceImpl.findById(id);
     }
 }

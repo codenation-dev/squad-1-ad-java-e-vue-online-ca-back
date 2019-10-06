@@ -26,8 +26,4 @@ public class LogServiceImpl implements LogServiceInterface {
     public Log findOneById(Long id) {
         return this.logRepository.findOneById(id);
     }
-    
-//    public Log findByOrigin() {
-//        return this.logRepository.findOneById()
-//    }
 }
