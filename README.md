@@ -8,16 +8,16 @@ Desenvolvimento de uma aplicação restful para registro e acesso a logs de erro
 
 ## Tecnologia
 
-- Java ```1.8```
-- Spring Boot ```2.1.7.RELEASE```
-- Maven ```3.6.2```
-- PostgreSQL ```10.9``` 
-- Swagger ```2.9.2```
-- Docker ```19.03.2```
+- [Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html) ```1.8```
+- [Spring Boot](https://spring.io/projects/spring-boot) ```2.1.7.RELEASE```
+- [Maven](https://maven.apache.org/) ```3.6.2```
+- [PostgreSQL](https://www.postgresql.org/) ```10.9``` 
+- [Swagger](https://swagger.io/) ```2.9.2```
+- [Docker](https://www.docker.com/) ```19.03.2 CE```
 
 ## Instalação
 
-A aplicação foi configurada pra ser executada com o Maven, portanto será necessário a instalado dessa ferramenta. 
+A aplicação foi configurada pra ser executada com o Maven, portanto será necessário a instalação dessa ferramenta. 
 
 > Instalando o Maven: [https://maven.apache.org/install.html](https://maven.apache.org/install.html).
 
@@ -59,19 +59,15 @@ Após executar a aplicação, você pode acessar a documentação da API, conten
 
 ## Diagramas
 
-### UML
+Representação visual dos diagramas de classe e do banco de dados.
 
-<figure>
+#### UML
+
 <img src="https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-back/blob/master/assets/uml.png" alt="Imagem representando as classes da aplicação">
-<figcaption>Representação das Classes.</figcaption>
-</figure>
 
-### Banco de Dados
+#### Banco de Dados
 
-<figure>
 <img src="https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-back/blob/master/assets/db.png" alt="Imagem representando as tabelas do banco de dados">
-<figcaption>Representação das tabelas do banco de dados.</figcaption>
-</figure>
 
 ## Equipe de desenvolvimento
 
@@ -81,3 +77,13 @@ Após executar a aplicação, você pode acessar a documentação da API, conten
 ## Front-end
 
 O [front-end](https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-front) para esta aplicação foi desenvolvido por [David Alves](https://github.com/davidalves1), participante da Aceleração Dev de Vue.js.
+
+## Deploy
+
+Para fins de demonstração de funcionamento, foi feito o deploy da aplicação nas plataformas [Heroku](https://www.heroku.com/) (back-end) e [Netlify](https://www.netlify.com/) (front-end).
+
+- **Instâncias:**
+    - [Front-end](https://squad-1-front.netlify.com)
+    - [Back-end](https://squad-1-back.herokuapp.com)
+
+> *Uma terceira instância foi criada no Heroku para o banco de dados PostgreSQL.*
