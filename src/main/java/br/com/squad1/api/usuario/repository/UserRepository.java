@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User, Long> {
     User save(User user);
-    Optional<User> findById(Long userId);
+    Optional<User> findById(Long id);
     Iterable<User> findAll();
     Optional<User> findByEmail(String email);
 }
